@@ -1,13 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
-import NavBar1 from './Components/NavBar'
+import NavBar from './Components/NavBar'
 import InfoPanel from './Components/InfoPanel'
+import FootNav from './Components/FootNav'
 
 function App() {
+  const  screenConfig = useState(0);
+
   return (
     <div className="App">
-    <NavBar1/>
-    <InfoPanel/>
+    <NavBar/>
+    <InfoPanel currentScreen={screenConfig[0]}/>
+    <FootNav screenConfig={screenConfig} />
     </div>
   );
 }
